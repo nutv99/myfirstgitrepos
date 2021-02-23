@@ -30,6 +30,7 @@ if (trim($resultAr[0]) == "Fail") {
 }  else {
   $ImageFileName = $result ; 
   pushImage($ImageFileName,$access_token,$replyToken);
+  $str = 'scbeasysim://billpayment-anonymous/2dd86d7d-9476-4de1-8d20-e9d56b4b926e';
   pushMessage($str,$access_token,$replyToken) ; 
 }
 
