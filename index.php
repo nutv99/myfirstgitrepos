@@ -14,6 +14,11 @@ $access_token = 'N0IzKf3n/tuu23eKxvUEkAY6Afzj8nu+lQYp+FyOAZXSVofsrCArcwRBOJKEbss
 $sValue= getInputMessage() ;
 $MessageInput = $sValue[0];  
 $replyToken =  $sValue[1];  
+$userID = $sValue[2] ;
+
+pushMessage($userID,$access_token,$replyToken) ;  return ;
+
+
 $ActionType= substr($MessageInput,0,1) ; 
 $resp = "Bot Set From GIT -----Ok---Action Type-->" .$ActionType ;
 //echo $resp;
@@ -174,6 +179,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'] ;  
 			$sValue[] = $text;
 			$sValue[] = $replyToken ;  
+			$sValue[] = $event['source']['userId'];  
 			return $sValue;
 			
 		}
