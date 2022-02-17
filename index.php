@@ -17,7 +17,7 @@ $replyToken =  $sValue[1];
 $userID = $sValue[2] ;
 
 pushMessage($userID,$access_token,$replyToken) ;  return ;
-return;
+return; return ;
 
 
 $ActionType= substr($MessageInput,0,1) ; 
