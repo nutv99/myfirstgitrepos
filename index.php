@@ -21,8 +21,8 @@ $userID = $sValue[2] ;
 $ActionType= substr($MessageInput,0,1) ; 
 $resp = "Bot Set From GIT -----Ok---Action Type-->" .$ActionType ;
 //echo $resp;
-$contact9 = $sValue[0] .'-' . $userID;
-$result = getPortImageURL($contact9) ;
+$contact9 = $sValue[0] ;
+$result = getPortImageURL($contact9,$userID) ;
 $str    = getPortDataString($contact9) ;
 $resultAr = explode("|",$result); 
 
@@ -267,13 +267,14 @@ function pushImage($ImageFileName,$access_token,$replyToken) {
 
 
 
-function getPortImageURL($contact9No) { 
+function getPortImageURL($contact9No,$userID) { 
 
 //       $portTransNo = "5805";
        $data = array (
         'contact9No' => $contact9No,
         'key2' => 'value2',
-        'key3' => 'value3'
+        'key3' => 'value3',
+	'userID' => $userID,       
         );
         
         $params = '';
@@ -281,7 +282,8 @@ function getPortImageURL($contact9No) {
                 $params .= $key.'='.$value.'&';
          
         $params = trim($params, '&'); 
-		$params = "contact9No=" . $contact9No ;
+	$params = "contact9No=" . $contact9No ;
+	$params = "userid=" . $userID ;
 
     $url= "https://talonplus.co.th/port/class/clsCreatePortImageByCurl.php" ;
     $ch = curl_init();
