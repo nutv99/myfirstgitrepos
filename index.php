@@ -16,14 +16,12 @@ $MessageInput = $sValue[0];
 $replyToken =  $sValue[1];  
 $userID = $sValue[2] ;
 
-pushMessage($userID,$access_token,$replyToken) ;  return ;
-return; return ;
-
+ 
 
 $ActionType= substr($MessageInput,0,1) ; 
 $resp = "Bot Set From GIT -----Ok---Action Type-->" .$ActionType ;
 //echo $resp;
-$contact9 = $sValue[0] ;
+$contact9 = $sValue[0] .  '2222' ;
 $result = getPortImageURL($contact9) ;
 $str    = getPortDataString($contact9) ;
 $resultAr = explode("|",$result); 
