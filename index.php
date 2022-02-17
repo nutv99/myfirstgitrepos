@@ -176,6 +176,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'] ;  
+			$sValue[] = $event['source']['userId'];  
 			$sValue[] = $text;
 			$sValue[] = $replyToken ;  
 			$sValue[] = $event['source']['userId'];  
