@@ -5,9 +5,6 @@
  
 <?php
 
-
-
-
 $access_token = 'N0IzKf3n/tuu23eKxvUEkAY6Afzj8nu+lQYp+FyOAZXSVofsrCArcwRBOJKEbssASNnN5S35vUE5yiQ3dPcvlRqu9G0IVPHVxUHUHW63dUUUdxfcWpbZUj7iu8ImPFKK8LnAdy5wGDxvMhUD1A1fugdB04t89/1O/w1cDnyilFU='; 
 
 
@@ -15,10 +12,6 @@ $sValue= getInputMessage() ;
 $MessageInput = $sValue[0];  
 $replyToken =  $sValue[1];  
 $userID = $sValue[2] ;
-
-
-pushMessage($userID,$access_token,$replyToken) ; 
-return ;
 
 
 $contact9 = $sValue[0] ;
@@ -269,12 +262,12 @@ function pushImage($ImageFileName,$access_token,$replyToken) {
 
 function getPortImageURL($contact9No,$userID) { 
 
-//       $portTransNo = "5805";
+
        $data = array (
         'contact9No' => $contact9No,
         'key2' => 'value2',
         'key3' => 'value3',
-	    'userid' => $userID,       
+	    'userid' => $userID       
         );
         
         $params = '';
@@ -282,6 +275,7 @@ function getPortImageURL($contact9No,$userID) {
                 $params .= $key.'='.$value.'&';
          
         $params = trim($params, '&'); 
+
 	$params = "contact9No=" . $contact9No ;
 	$params .= "&userid=" . $userID ;
 
@@ -307,9 +301,9 @@ function getPortImageURL($contact9No,$userID) {
 } // end func
 
 
-function getPortDataString($contact9No,,$userID) { 
+function getPortDataString($contact9No,$userID) { 
 
-//       $portTransNo = "5805";
+
        $data = array (
         'contact9No' => $contact9No,
         'key2' => 'value2',
