@@ -283,7 +283,7 @@ function getPortImageURL($contact9No,$userID) {
          
         $params = trim($params, '&'); 
 	$params = "contact9No=" . $contact9No ;
-	$params = "userid=" . $userID ;
+	$params .= "&userid=" . $userID ;
 
     $url= "https://talonplus.co.th/port/class/clsCreatePortImageByCurl.php" ;
     $ch = curl_init();
@@ -307,13 +307,14 @@ function getPortImageURL($contact9No,$userID) {
 } // end func
 
 
-function getPortDataString($contact9No) { 
+function getPortDataString($contact9No,,$userID) { 
 
 //       $portTransNo = "5805";
        $data = array (
         'contact9No' => $contact9No,
         'key2' => 'value2',
-        'key3' => 'value3'
+        'key3' => 'value3',
+        'userID' => $userID
         );
         
         $params = '';
@@ -321,7 +322,8 @@ function getPortDataString($contact9No) {
           $params .= $key.'='.$value.'&';
          
         $params = trim($params, '&'); 
-		$params = "contact9No=" . $contact9No ;
+	$params = "contact9No=" . $contact9No ;
+	$params .= "&userid=" . $userID ;
 
     $url= "https://talonplus.co.th/port/class/clsCreatePortDataStringCurl.php" ;
     $ch = curl_init();
