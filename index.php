@@ -18,9 +18,7 @@ $userID = $sValue[2] ;
 
  
 
-$ActionType= substr($MessageInput,0,1) ; 
-$resp = "Bot Set From GIT -----Ok---Action Type-->" .$ActionType ;
-//echo $resp;
+
 $contact9 = $sValue[0] ;
 $result = getPortImageURL($contact9,$userID) ;
 $str    = getPortDataString($contact9) ;
@@ -274,7 +272,7 @@ function getPortImageURL($contact9No,$userID) {
         'contact9No' => $contact9No,
         'key2' => 'value2',
         'key3' => 'value3',
-	'userID' => $userID,       
+	    'userid' => $userID,       
         );
         
         $params = '';
@@ -372,8 +370,7 @@ function getDataString($contact9) {
     
 } // end func
 
-function getLINEProfile($datas)
-{
+function getLINEProfile($datas) {
    $datasReturn = [];
    $curl = curl_init();
    curl_setopt_array($curl, array(
