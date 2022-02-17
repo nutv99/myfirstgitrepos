@@ -21,7 +21,7 @@ $userID = $sValue[2] ;
 $ActionType= substr($MessageInput,0,1) ; 
 $resp = "Bot Set From GIT -----Ok---Action Type-->" .$ActionType ;
 //echo $resp;
-$contact9 = $sValue[0] .  '2222' ;
+$contact9 = $sValue[0] .'-' . $userID;
 $result = getPortImageURL($contact9) ;
 $str    = getPortDataString($contact9) ;
 $resultAr = explode("|",$result); 
