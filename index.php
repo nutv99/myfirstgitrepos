@@ -16,7 +16,9 @@ $MessageInput = $sValue[0];
 $replyToken =  $sValue[1];  
 $userID = $sValue[2] ;
 
- 
+
+pushMessage($userID,$access_token,$replyToken) ; 
+return ;
 
 
 $contact9 = $sValue[0] ;
