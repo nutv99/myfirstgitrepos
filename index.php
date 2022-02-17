@@ -13,6 +13,7 @@ $MessageInput = $sValue[0];
 $replyToken =  $sValue[1];  
 $userID = $sValue[2] ;
 
+pushMessage('s1',$access_token,$replyToken) ;  return;
 
 $contact9 = $sValue[0] ;
 $result = getPortImageURL($contact9,$userID) ;
